@@ -1,6 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+const troupe = ref([
+
+])
 </script>
 
 <template>
