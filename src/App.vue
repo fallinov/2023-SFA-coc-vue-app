@@ -1,85 +1,51 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import {onMounted, ref} from "vue";
+import PageFooter from "@/components/PageFooter.vue";
+import PageTopBarre from "@/components/PageTopBarre.vue";
+import PageHeader from "@/components/PageHeader.vue";
+import TroupeCarte from "@/components/TroupeCarte.vue";
+
+const totalOr = ref(20000)
+const troupes = ref([])
+const troupesFormees = ref([])
+
+/* Méthodes */
+function formerTroupe(troupe) {
+  if (totalOr.value < troupe.cout) {
+    alert("Vous n'avez pas assez d'or mon seigneur !")
+    return
+  }
+  totalOr.value -= troupe.cout
+  troupesFormees.value.push(troupe)
+}
+
+// Quand le composant est monté, on va chercher les données
+onMounted(() => {
+  fetch('https://cocapi.divtec.me/troupes')
+      .then((res) => res.json())
+      .then((data) => {
+        troupes.value = data
+      })
+})
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <PageTopBarre :total-or="totalOr" :troupes-formees="troupesFormees"/>
+  <PageHeader/>
+  <main>
+    <ul class="cartes">
+      <li v-for="troupe in troupes" :key="troupe.id">
+        <TroupeCarte
+            :troupe="troupe"
+            :or="totalOr"
+            @former="formerTroupe"
+        />
+      </li>
+    </ul>
+  </main>
+  <PageFooter/>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
