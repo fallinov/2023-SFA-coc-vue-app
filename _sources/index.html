@@ -16,18 +16,26 @@
 </head>
 <body>
 <div id="app">
-    <div class="solde-or">
-        <img src="img/piece-or-note.jpg" alt="Solde Or">
-        {{ totalOr.toLocaleString('fr-CH') }}
-        pièces d'or
-    </div>
+    <aside class="solde-or">
+        <div>
+            <img src="img/piece-or-note.jpg" alt="Solde Or">
+            {{ totalOr.toLocaleString('fr-CH') }}
+            pièces d'or
+        </div>
+        <div>
+            <img src="img/troupes-icon.png" alt="Troupes">
+            {{ troupesFormees.length }}
+            troupes formées
+        </div>
+    </aside>
     <header>
-        <img class="logo" src="img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
-        <h1>{{ titre }}</h1>
-        <p class="description"> {{ description }}</p>
-        <a :href="site">
-            <button>Site officiel</button>
-        </a>
+        <h1>
+            <img src="img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
+        </h1>
+        <p class="description">
+            Construire un village,
+            former un clan et participer à des guerres de clans épiques !
+        </p>
     </header>
     <main>
         <ul class="cartes">
@@ -37,7 +45,7 @@
                             :style="`background: linear-gradient(60deg, rgb(36, 36, 36) 0%,
                             ${troupe.couleur} 100%);`"
                     >
-                        <img :src="'img/' + troupe.image" :alt="troupe.nom"/>
+                        <img :src="troupe.image" :alt="troupe.nom"/>
                     </header>
 
                     <div class="level"
@@ -49,7 +57,7 @@
                     <h2 class="name">{{ troupe.nom }}</h2>
 
                     <button :style="`background-color: ${ troupe.couleur }`"
-                            @click="formerTroupe(troupe.cout)"
+                            @click="formerTroupe(troupe)"
                             :disabled="totalOr < troupe.cout"
                     >
                         Former
@@ -87,10 +95,7 @@
         </ul>
     </main>
     <footer>
-        &copy; 2023 -
-        <a :href="site">
-            Supercell.com
-        </a>
+        &copy; 2023 - Supercell.com
     </footer>
 </div>
 <script src="js/main.js"></script>
