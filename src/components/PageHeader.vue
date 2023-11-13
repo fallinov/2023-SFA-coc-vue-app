@@ -5,7 +5,7 @@
 <template>
   <header>
     <h1>
-      <img src="img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
+      <img src="/img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
     </h1>
     <p class="description">
       Construire un village,

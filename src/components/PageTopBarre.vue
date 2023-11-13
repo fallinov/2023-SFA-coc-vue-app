@@ -6,11 +6,11 @@ defineProps(['totalOr', 'troupesFormees'])
 <template>
   <aside class="solde-or">
     <div>
-      <img src="img/piece-or-note.jpg" alt="Solde Or">
+      <img src="/img/piece-or-note.jpg" alt="Solde Or">
       {{ totalOr.toLocaleString('fr-CH') }} pièces d'or
     </div>
     <div>
-      <img src="img/troupes-icon.png" alt="Troupes">
+      <img src="/img/troupes-icon.png" alt="Troupes">
       {{ troupesFormees.length }} troupes formées
     </div>
   </aside>
