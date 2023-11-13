@@ -14,6 +14,13 @@ body {
     background-size: cover;
     font: 1rem "Lato", Arial, sans-serif;
     color: #9E9E9E;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 a {
