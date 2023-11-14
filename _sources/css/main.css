@@ -10,10 +10,17 @@ html, body {
 }
 
 body {
-    background: url("../img/coc-bg-arbres-montagnes.png") no-repeat center center fixed;
+    background: url("../img/coc-arbres-montagnes.jpg") no-repeat center center fixed;
     background-size: cover;
     font: 1rem "Lato", Arial, sans-serif;
     color: #9E9E9E;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 a {
@@ -79,19 +86,23 @@ button[disabled] img {
     filter: grayscale(100%);
 }
 
-.solde-or {
+aside {
     position: fixed;
     width: 100%;
     background: white;
     color: #3B3B3B;
+    font-size: 1.25rem;
     padding: .5rem;
-    height: 60px;
     z-index: 9999;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .solde-or img {
-    max-height: 3em;
+    max-height: 3rem;
     vertical-align: middle;
 }
 
@@ -101,7 +112,7 @@ header {
     text-align: center;
 }
 
-header .logo {
+header h1 img {
     max-height: 150px;
 }
 

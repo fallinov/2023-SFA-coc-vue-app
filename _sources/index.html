@@ -12,73 +12,59 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="16x16">
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 </head>
 <body>
 <div id="app">
-    <div class="solde-or">
-        <img src="img/piece-or-note.jpg" alt="Solde Or">
-        {{ totalOr.toLocaleString('fr-CH') }}
-        pièces d'or
-    </div>
+    <aside class="solde-or">
+        <div>
+            <img src="img/piece-or-note.jpg" alt="Solde Or">
+            20 000 pièces d'or
+        </div>
+        <div>
+            <img src="img/troupes-icon.png" alt="Troupes">
+            0 troupes formées
+        </div>
+    </aside>
     <header>
-        <img class="logo" src="img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
-        <h1>{{ titre }}</h1>
-        <p class="description"> {{ description }}</p>
-        <a :href="site">
-            <button>Site officiel</button>
-        </a>
+        <h1>
+            <img src="img/clash-of-clans-logo.webp" alt="Logo Clash of Clans">
+        </h1>
+        <p class="description">
+            Construire un village,
+            former un clan et participer à des guerres de clans épiques !
+        </p>
     </header>
     <main>
         <ul class="cartes">
-            <li v-for="troupe in troupes" :key="troupe.id">
+            <li>
                 <article>
-                    <header
-                            :style="`background: linear-gradient(60deg, rgb(36, 36, 36) 0%,
-                            ${troupe.couleur} 100%);`"
-                    >
-                        <img :src="'img/' + troupe.image" :alt="troupe.nom"/>
+                    <header style="background: linear-gradient(60deg,#3B3B3B 0%, #EE5487 100%);">
+                        <img src="https://cocapi.divtec.me/img/archer.png" alt="Archer">
                     </header>
-
-                    <div class="level"
-                         :style="`color: ${ troupe.couleur }`"
-                    >
-                        Niveau {{ troupe.niveau }}
+                    <div class="level" style="color: #EE5487;">
+                        Niveau 3
                     </div>
-
-                    <h2 class="name">{{ troupe.nom }}</h2>
-
-                    <button :style="`background-color: ${ troupe.couleur }`"
-                            @click="formerTroupe(troupe.cout)"
-                            :disabled="totalOr < troupe.cout"
-                    >
-                        Former
-                        <img src="img/piece-or.png" alt="Former">
-                    </button>
-
-                    <p class="description">
-                      {{ troupe.description }}
-                    </p>
-
-                    <footer >
-                        <div class="training" :style="`background-color: ${ troupe.couleur }`">
-                            <div v-if="troupe.formation > 60">
-                                {{ Math.round(troupe.formation / 60) }}<sup>min
-                            </sup>
-                            </div>
-                            <div v-else>
-                                {{ troupe.formation }}<sup>sec</sup>
-                            </div>
+                    <h2 class="name">Archer</h2>
+                    <button style="background-color: #EE5487;"> Former
+                        <img src="img/piece-or.png" alt="Former"></button>
+                    <p class="description">Les archers sont des tireurs d'élite
+                        qui attaquent à distance. Ils sont rapides et bon marché
+                        à former, mais ils sont faibles en mêlée et doivent être
+                        protégés.</p>
+                    <footer>
+                        <div class="training"
+                             style="background-color: #EE5487;">
+                            <div>25<sup>sec</sup></div>
                             <div>Formation</div>
                         </div>
-
-                        <div class="speed" :style="`background-color: ${ troupe.couleur }`">
-                            <div>{{ troupe.vitesse }}</div>
+                        <div class="speed"
+                             style="background-color: #EE5487;">
+                            <div>24</div>
                             <div>Vitesse</div>
                         </div>
-
-                        <div class="cost" :style="`background-color: ${ troupe.couleur }`">
-                            <div>{{ troupe.cout }}</div>
+                        <div class="cost"
+                             style="background-color: #EE5487;">
+                            <div>200</div>
                             <div>Coût</div>
                         </div>
                     </footer>
@@ -87,12 +73,8 @@
         </ul>
     </main>
     <footer>
-        &copy; 2023 -
-        <a :href="site">
-            Supercell.com
-        </a>
+        &copy; 2023 - Supercell.com
     </footer>
 </div>
-<script src="js/main.js"></script>
 </body>
 </html>
