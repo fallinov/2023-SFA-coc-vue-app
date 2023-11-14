@@ -121,3 +121,20 @@ Intégrer dans `src/App.vue` les contenus des fichiers `_sources/index.html`.
    [Vue 3 "script setup" Cheat Sheet](https://steve-fallet.notion.site/Vue-3-script-setup-Cheat-Sheet-b12192ceae244ecda65f771579ca02bc)
 ![4-coc-integration.png](_medias%2F4-coc-integration.png)
 ---
+
+## 5. Utilisation de l'API CoC
+
+Ajouter `import {onMounted, ref} from "vue";` à `src/App.vue`.
+
+Utiliser la méthode onMounted dans `src/App.vue`.
+
+```javascript
+// Quand le composant est monté, on va chercher les données
+onMounted(() => {
+  fetch('https://cocapi.divtec.me/troupes')
+      .then((res) => res.json())
+      .then((data) => {
+        troupes.value = data
+      })
+})
+```
