@@ -40,7 +40,7 @@ Remplacer le contenu de `src/App.vue` par le code ci-dessous.
 import {ref} from 'vue'
 
 // Tableau des troupes
-const troupe = ref([
+const troupes = ref([
   {
     "id": 2,
     "nom": "Archer",
