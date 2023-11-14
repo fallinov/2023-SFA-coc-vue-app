@@ -145,6 +145,20 @@ Procéder de la même manière que pour `PageTopBarre.vue`, `PageHeader.vue` et 
 ### Formation des troupes
 
 La méthode qui gère la formation des troupes `formerTroupe` est définie dans `App.vue`.
+
+Ajouter cette méthode à `App.vue` :
+```javascript
+/* Méthodes */
+function formerTroupe(troupe) {
+  if (totalOr.value < troupe.cout) {
+    alert("Vous n'avez pas assez d'or mon seigneur !")
+    return
+  }
+  totalOr.value -= troupe.cout
+  troupesFormees.value.push(troupe)
+}
+```
+
 Le composant `TroupeCarte.vue` doit pouvoir appeler cette méthode, mais ne peut pas le faire directement.
 Pour ce faire, il faudra utiliser les **événements**.
 
@@ -157,19 +171,19 @@ Pour ce faire, il faudra utiliser les **événements**.
       ```vue
       const emit = defineEmits(["former"]);
       ```
-   2. Créer une méthode `formerTroupe(cout)` qui émettra l'événement `former`
-      avec le coût de la troupe en paramètre.
+   2. Créer une méthode `formerTroupe(troupe)` qui émettra l'événement `former`
+      avec la troupe en paramètre.
       ```vue
-      const formerTroupe = (cout) => {
-          emit("former", cout);
+      const formerTroupe = (troupe) => {
+          emit("former", troupe);
       };
       ```
 3. Modifier l'**événement** `@click` du bouton `Former` pour qu'il appelle la méthode `formerTroupe`
-   et lui passe le coût de formation en paramètre.
+   et lui passe la troupe en paramètre.
      ```vue
      <button
          :style="`background-color: ${troupe.couleur}`"
-         @click="formerTroupe(troupe.cout)"
+         @click="formerTroupe(troupe)"
          :disabled="or < troupe.cout"
      > 
          Former
