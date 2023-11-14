@@ -176,7 +176,7 @@ ul.cartes li {
     z-index: 99;
 }
 
-/*** Entête ***/
+/*** Entête Carte Troupe ***/
 article header {
     height: 230px;
     padding: 0;
@@ -193,7 +193,7 @@ article header img {
     margin-left: -70px;
 }
 
-/*** Contenu ***/
+/*** Contenu Carte Troupe ***/
 article .level {
     text-transform: uppercase;
     font-size: 12px;
@@ -220,7 +220,7 @@ article p.description {
     margin-bottom: 100px;
 }
 
-/*** Footer ***/
+/*** Footer Carte Troupe ***/
 article footer {
     position: absolute;
     width: 100%;
