@@ -1,6 +1,8 @@
-# mon-app
+# Clash of Clans App
+Créer une application Vue.js à partir du site Clash of Clans (CoC)
+contenu dans le dossier `_sources/` de ce dépôt.
 
-This template should help get you started developing with Vue 3 in Vite.
+> [Instructions de l'étape 1.](Etape-1.md)
 
 ## Recommended IDE Setup
 
