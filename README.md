@@ -4,6 +4,9 @@ contenu dans le dossier `_sources/` de ce dépôt.
 
 > [Instructions de l'étape 1.](Etape-1.md)
 
+> [Instructions de l'étape 2.](Etape-2.md) 
+
+---
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
