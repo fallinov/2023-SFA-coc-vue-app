@@ -17,7 +17,7 @@ Configuration de l'application Vue et intégration de l'ancien site CoC
      ![1-vue-app-base.png](_medias%2F1-vue-app-base.png)
 ---
 ## 2. Titre du site, CSS et images
-   * Changer le titre de la page, de l'application, dans `src/index.html`
+   * Changer le titre de la page, de l'application, dans `index.html`
      ```html 
      <!-- Ancienne valeur -->
      <title>Vite App</title>
