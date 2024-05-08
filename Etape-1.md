@@ -117,7 +117,7 @@ ul
   ![3-coc-app-base.png](_medias%2F3-coc-app-base.png)
 
 ## 4. Intégration du HTML de la maquette
-Aide : [Vue 3 "script setup" Cheat Sheet](https://steve-fallet.notion.site/Vue-3-script-setup-Cheat-Sheet-b12192ceae244ecda65f771579ca02bc)
+Aide : [Vue 3 "script setup" Cheat Sheet](https://divtec.gitbook.io/vuejs/vue-3-less-than-script-setup-greater-than-cheat-sheet)
 
 ### 4.1 Intégrer dans `src/App.vue` le HTML de la maquette `_maquette/index.html`.
 
