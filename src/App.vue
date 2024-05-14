@@ -3,7 +3,6 @@ import {onMounted, ref} from "vue";
 import PageFooter from "@/components/PageFooter.vue";
 import PageTopBarre from "@/components/PageTopBarre.vue";
 import PageHeader from "@/components/PageHeader.vue";
-import TroupeCarte from "@/components/TroupeCarte.vue";
 
 const totalOr = ref(20000)
 const troupes = ref([])
@@ -33,15 +32,7 @@ onMounted(() => {
   <PageTopBarre :total-or="totalOr" :troupes-formees="troupesFormees"/>
   <PageHeader/>
   <main>
-    <ul class="cartes">
-      <li v-for="troupe in troupes" :key="troupe.id">
-        <TroupeCarte
-            :troupe="troupe"
-            :or="totalOr"
-            @former="formerTroupe"
-        />
-      </li>
-    </ul>
+    <router-view :troupes="troupes" :or="totalOr" @former="formerTroupe"/>
   </main>
   <PageFooter/>
 </template>

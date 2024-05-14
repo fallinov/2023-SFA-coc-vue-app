@@ -38,6 +38,10 @@ function formerTroupe(troupe) {
       <img src="/img/piece-or.png" alt="Former" />
     </button>
 
+    <router-link :to="{ name: 'fiche-troupe', params: { id: troupe.id }}">
+      <button >Voir fiche détaillée</button>
+    </router-link>
+
     <p class="description">
       {{ troupe.description }}
     </p>
