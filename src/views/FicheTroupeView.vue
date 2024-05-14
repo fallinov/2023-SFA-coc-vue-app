@@ -27,16 +27,19 @@ const emit = defineEmits(["former"]);
 
 <template>
   <h1>Fiche troupe</h1>
-  <p>ID : {{ $route.params.id }}</p>
+  <p>ID : {{ route.params.id }}</p>
   <pre>
     {{ troupe }}
   </pre>
-
-  <TroupeCarte v-if="troupe"
-      :troupe="troupe"
-      :or="or"
-      @former="$emit('former', $event)"
-  />
+  <ul class="cartes">
+    <li>
+      <TroupeCarte v-if="troupe"
+          :troupe="troupe"
+          :or="or"
+          @former="$emit('former', $event)"
+      />
+    </li>
+    </ul>
 </template>
 
 <style scoped lang="sass">
