@@ -171,19 +171,12 @@ Pour ce faire, il faudra utiliser les **événements**.
       ```vue
       const emit = defineEmits(["former"]);
       ```
-   2. Créer une méthode `formerTroupe(troupe)` qui émettra l'événement `former`
-      avec la troupe en paramètre.
-      ```vue
-      const formerTroupe = (troupe) => {
-          emit("former", troupe);
-      };
-      ```
-3. Modifier l'**événement** `@click` du bouton `Former` pour qu'il appelle la méthode `formerTroupe`
-   et lui passe la troupe en paramètre.
+   3. Ajouter l'écoute de l'événement `@click` du bouton `Former` pour qu'il **émette l'événement `former`**
+      et lui passe la troupe en paramètre.
      ```vue
      <button
+         @click="emit('former', troupe)"
          :style="`background-color: ${troupe.couleur}`"
-         @click="formerTroupe(troupe)"
          :disabled="or < troupe.cout"
      > 
          Former
