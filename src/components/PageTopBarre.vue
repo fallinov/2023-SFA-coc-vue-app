@@ -1,6 +1,8 @@
 <script setup>
 defineProps(['totalOr', 'troupesFormees'])
-
+// TODO afficler la liste des troupes sous format d'icones avec une puce indiquant le nombre de troupes formées
+// TODO ajouter une barre de recherche pour filtrer les troupes
+// TODO ajouter un liste déroulante pour trier les troupes par nom, coût, temps de formation
 </script>
 
 <template>
